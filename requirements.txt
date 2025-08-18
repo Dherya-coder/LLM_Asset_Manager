@@ -3,6 +3,7 @@ uvicorn==0.24.0
 python-dotenv==1.0.0
 groq==0.4.1
 pydantic==2.6.3
+pydantic-core==2.16.3 ; python_version < "3.13"
 python-multipart==0.0.6
 httpx==0.24.1
 typing-extensions>=4.8.0
