@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoneyInsight – Smart Investment Allocation</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="brand-header">
+            <div class="logo-title">
+                <div class="logo">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="24" cy="24" r="24" fill="#2563eb"/>
+                        <path d="M16 32C16 27.5817 19.5817 24 24 24C28.4183 24 32 27.5817 32 32" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M24 16V24" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                        <circle cx="24" cy="16" r="2.5" fill="#fff"/>
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="brand-title">MoneyInsight</h1>
+                    <p class="subtitle">Smart Investment Allocation Advisor</p>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <form id="investmentForm">
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" name="age" required min="18" max="100" placeholder="Enter your age">
+                    </div>
+                    <div class="form-group">
+                        <label for="investmentAmount">Investment Amount ($)</label>
+                        <input type="number" id="investmentAmount" name="investmentAmount" required min="1000" placeholder="Enter investment amount">
+                    </div>
+                    <button type="submit" class="submit-btn">Get Recommendations</button>
+                </form>
+            </div>
+
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <h2>Your Investment Allocation</h2>
+                <div class="allocation-chart">
+                    <canvas id="allocationChart"></canvas>
+                </div>
+                <div class="recommendation">
+                    <h3>Recommendation</h3>
+                    <p id="recommendationText"></p>
+                </div>
+            </div>
+
+            <div class="loading" id="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Analyzing your investment profile...</p>
+            </div>
+        </main>
+    </div>
+    <footer class="footer">
+        <span>&copy; 2024 MoneyInsight. All rights reserved.</span>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/static/script.js"></script>
+</body>
+</html> 

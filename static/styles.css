@@ -1,0 +1,203 @@
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --accent-color: #16a34a;
+    --gold: #ffd700;
+    --background-gradient: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+    --text-color: #1e293b;
+    --border-color: #e2e8f0;
+    --card-background: #ffffffcc;
+    --footer-bg: #1e293b;
+    --footer-text: #e0e7ef;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--background-gradient);
+    color: var(--text-color);
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 600px;
+    margin: 2rem auto 0 auto;
+    padding: 2rem;
+    background: var(--card-background);
+    border-radius: 1.5rem;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.12);
+    backdrop-filter: blur(2px);
+}
+
+.brand-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.logo {
+    background: linear-gradient(135deg, #2563eb 60%, #16a34a 100%);
+    border-radius: 50%;
+    padding: 0.5rem;
+    box-shadow: 0 2px 8px 0 rgba(37, 99, 235, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+    margin-bottom: 0.1rem;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.input-section {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 16px -2px rgba(37, 99, 235, 0.08);
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-color);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1.5px solid var(--border-color);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background: #f1f5f9;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.submit-btn {
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    color: white;
+    border: none;
+    padding: 0.85rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+    width: 100%;
+    box-shadow: 0 2px 8px 0 rgba(22, 163, 74, 0.08);
+    letter-spacing: 0.5px;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(90deg, var(--primary-hover), var(--gold));
+    box-shadow: 0 4px 16px 0 rgba(37, 99, 235, 0.12);
+}
+
+.results-section {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 16px -2px rgba(22, 163, 74, 0.08);
+    border: 1px solid var(--border-color);
+}
+
+.allocation-chart {
+    margin: 2rem 0;
+    height: 300px;
+}
+
+.recommendation {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.recommendation h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.loading {
+    text-align: center;
+    padding: 2rem;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--border-color);
+    border-top: 4px solid var(--primary-color);
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.footer {
+    width: 100%;
+    background: var(--footer-bg);
+    color: var(--footer-text);
+    text-align: center;
+    padding: 1.2rem 0 1rem 0;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    margin-top: 2rem;
+    border-radius: 0 0 1.5rem 1.5rem;
+    box-shadow: 0 -2px 8px 0 rgba(31, 38, 135, 0.06);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    .brand-title {
+        font-size: 1.5rem;
+    }
+    .input-section,
+    .results-section {
+        padding: 1.2rem;
+    }
+    .logo-title {
+        gap: 0.7rem;
+    }
+} 
