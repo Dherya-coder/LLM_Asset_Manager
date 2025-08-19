@@ -37,13 +37,14 @@ except Exception as e:
 
 # Hardcoded market trends
 MARKET_TRENDS = {
-    "NIFTY 50": "Expected to increase by 12-15% in the next year due to strong economic growth and corporate earnings",
+    "NIFTY 50": "Expected to increase by 10-12% in the next year due to strong economic growth and corporate earnings but riskier",
     "Gold": "Expected to increase by 8-10% in the next year due to global economic uncertainty and inflation concerns",
     "Bonds": "Expected to yield 6-7% in the next year with moderate risk",
-    "Real Estate": "Expected to appreciate by 5-7% in major metropolitan areas",
-    "Cryptocurrency": "High volatility expected with potential 20-30% gains but significant risk",
-    "Fixed Deposits": "Offering 6-7% returns with minimal risk",
-    "International Markets": "Expected to grow by 10-12% with focus on US and European markets"
+    "Mutual Funds": "Expected to increase by 8-10% in the next year less risky due to diversification over multiple stocks by experts"
+    # "Real Estate": "Expected to appreciate by 5-7% in major metropolitan areas",
+    # "Cryptocurrency": "High volatility expected with potential 20-30% gains but significant risk",
+    # "Fixed Deposits": "Offering 6-7% returns with minimal risk",
+    # "International Markets": "Expected to grow by 10-12% with focus on US and European markets"
 }
 
 class InvestmentRequest(BaseModel):
@@ -96,9 +97,8 @@ async def allocate_investment(request: InvestmentRequest):
         
         Current Market Trends and Forecasts (Next 1 Year):
         {market_trends_text}
-        take additional information regarding returns from various asset classess from yfinance with tickers of eache asset classes as follows
-        NIFTY 50 - "^NSEI", Gold - "GC=F" (Gold Futures), US 10Y Bonds - "^TNX", Real Estate - "VNQ" (Vanguard Real Estate ETF), Bitcoin - "BTC-USD", International - "^GSPC" (S&P 500)
-        
+        take additional information regarding returns from various asset classes from yfinance with tickers of each asset class as follows
+    NIFTY 50 - "^NSEI", Gold - "GC=F" (Gold Futures), US 10Y Bonds - "^TNX", Mutual Funds - "^HDFCQUAL.BO".
         Additional Market Context:
         {request.market_forecast if request.market_forecast else "No additional market forecast provided"}
         
